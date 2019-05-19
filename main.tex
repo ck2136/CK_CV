@@ -1,0 +1,325 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+			
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks, linkcolor=red
+}
+\usepackage[numbers]{natbib}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\renewcommand{\refname}{Publications}           % Publications
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\PresentationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Title
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % Location
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+\setcitestyle{numbers} 	
+\MyName{Chong H. Kim}
+\MySlogan{Be The Change}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal details}{}
+
+%\PersonalEntry{Birth}{May 11, 1986}
+\PersonalEntry{Address}{12850 Titan way, Denver CO}
+\PersonalEntry{Phone}{(615) 681-1439}
+\PersonalEntry{Mail}{\url{chong.kim@ucdenver.edu}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{PhDc. Pharmaceutical Economics \& Outcomes Research}{2015-2019}{University of Colorado Skaggs School of Pharmacy}{Coursework: Advanced Cost-effectiveness analysis, Advanced Epidemiology, Pharmaceutical Outcomes Research Methods, Health Economics}
+\sepspace
+
+\EducationEntry{MS. Biostatistics \& Bioinformatics}{2015-2019}{University of Colorado Skaggs School of Pharmacy}{Coursework: Stochastic Processes, Python \& R Programming, Missing Data, Longitudinal analysis, Biostatistics Methods, Biostatistics Theory I/II.}
+\sepspace
+
+\EducationEntry{MPH. Health Policy \& Management}{2012-2013}{Columbia University Mailman School of Public Health}{Relevant Coursework: Decision Analysis, Health Economics, HealthCare Accounting and Budgeting, Comparative Effectiveness Outcomes Research, Public Health Ethics, US Healthcare Systems, Program Evaluation, Epidemiology I/II, Biostatistics, Large Scale Data Analysis, Genetic Epidemiology (GWAS, Linkage Analysis), Consulting Workshop, Quality of Healthcare, Research Methods.}
+\sepspace
+
+
+\EducationEntry{BSc. Biochemistry \& Molecular Biology}{2005-2009}{Michigan State University}{Relevant Laboratory Skills: PCR, SDS-PAGE, Immunoprecipitation, Drosophila management, Molecular cloning of DNA, GC-MS, Autoclaving, Statistics using Excel.}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
+
+\EducationEntry{PhD Student/Candidate}{2015-present}{University of Colorado, Full-time}{}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Conducted and published research on cost-effectiveness of various interventions (e.g. smart inhalers) and programs (e.g. transfusion medicine diagnostic practices).
+    \item Conducted and published a systematic review of asthma cost-effectiveness models.
+    \item Conducted a meta-analysis of ovale closure vs. medical therapy for secondary stroke prevention.
+    \item Conducted various types of simulations on cost-effectiveness analyses and prediction models.
+    \item Analyzed and drafted Drug Utilization Review regarding policy changes affecting Colorado Medicaid Beneficiaries.
+    \item Created R-based web applications for statistical analyses (e.g. structural equation modeling and survival analysis).
+    \item Developed a prediction algorithm that predicts the trajectory of recovery for patients that have undergone knee replacement surgery. 
+    \item Conducted a spatial analysis project to determine the impact of long lasting insecticide-treated nets on Malaria prevalence in Uganda.
+\end{itemize}
+\sepspace
+
+%%% Publications & Projects
+%%% ------------------------------------------------------------
+\NewPart{Publications}{}
+\subsection*{Peer-Reviewed Publications}
+
+\begingroup
+\renewcommand{\section}[2]{}%       %to get rid of heading "REFERENCES"
+\bibliographystyle{unsrtnat}
+\bibliography{cv.bib}
+\nocite{*}
+\endgroup
+
+\subsection*{In-Progress}
+\begin{itemize}
+    \item A spatial analysis of the association between LLIN use and malaria prevalence after a LLIN campaign in a community in northeast Uganda. Chong H. Kim, , Dorothy Echodu3, Humphrey Wanzira , Alyssa Forber , Kathryn Colborn
+    \item Development and validation of a "patient-like me" clinical prediction model for patient-reported pain and function after primary total knee replacement surgery. Chong H. Kim,  Timothy Loar, Kathryn Colborn, Andrew Kittelson
+    \item Development and validation of asthma cost-effectiveness model incorporating real-time adherence and inhalation technique. Chong H. Kim, Susanne Van de hei, Job Van Boven.  
+    \item Determination of clusters of among asthma inhaler adherence and technique groups among asthma patients. Chong H. Kim, Susanne Van de hei, Job Van Boven, Richard Costello.  
+    \item Development and validation of prediction model for predicting the risk of having severe ADAMTS13 deficiency. Chong H. Kim, Sierra C. Simmons, Chau M. Bui, Ning Jiang, and Huy P. Pham
+    \item Therapeutic Plasma Exchange Practice Patterns in the US – 2013 to 2017. Chong H. Kim, Sierra C. Simmons, Chau M. Bui, Ning Jiang, and Huy P. Pham
+    \item Apheresis utilization in the US – 2007 to 2017. Chong H. Kim, Sierra C. Simmons, Chau M. Bui, Ning Jiang, and Huy P. Pham
+    \item Development and validation of prediction model for predicting future asthma exacerbation using beta-agonists: a multi-country analysis. Chong H. Kim, Susanne Van de hei, Job Van Boven, Heather Hoch, Laura Saba, Patrick Sullivan, Robert McQueen, Jonathan D. Campbell,
+    \item Factors associated with $\beta$-agonist use and future asthma exacerbation among persistent asthma patients: A mediation analysis. Chong H. Kim, Susanne Van de hei, Job Van Boven, Heather Hoch, Laura Saba, Patrick Sullivan, Robert McQueen, Jonathan D. Campbell,
+    \item Longitudinal impact of $\beta$-agonist use among persistent asthma patients. Chong H. Kim, Susanne Van de hei, Job Van Boven, Heather Hoch, Laura Saba, Patrick Sullivan, Robert McQueen, Jonathan D. Campbell,
+\end{itemize}
+
+
+\NewPart{Software \& Applications}{}
+\subsection*{Web Applications}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Created Structural Equation Modeling (\href{https://www.shinyapps.io/admin/#/application/232542}{SEM}) web application using R. 
+    \item Created \href{https://github.com/ck2136/SurvivalCurveExtraction}{survival curve extraction} web application (for use in health technology assessment) using R.
+    \item Working on \href{https://github.com/ck2136/DecisionCurve}{decision curve analysis web application} for determining clinical usefulness of prediction model.
+    \item Working on \href{https://github.com/ck2136/pcr}{Personalized Reference Chart web application} for helping providers (esp. physical therapy) understand trajectory of patient outcomes (e.g. knew surgery recovery).
+    \item Created an algorithm that predicts the trajectory of patient health outcomes based on extending a standard K nearest neighbours algorithm with predictive mean matching:  \href{https://github.com/ck2136/PMMSKNN}{PMMSKNN}
+\end{itemize}
+
+\subsection*{R Package}
+\begin{itemize}
+    \item Working on \href{https://github.com/ck2136/DecisionCurve}{decision curve analysis R package} for determining clinical usefulness of prediction model based on Vickers et al.
+\end{itemize}
+
+\subsection*{Excel Dashboards}
+\begin{itemize}
+    \item Created \href{https://github.com/ck2136/FEIBAvsrFIIa/tree/master/Code}{cost-effectiveness dashboards in Excel} for determining the cost-effectiveness of 1) smart inhaler system for severe asthma patients in the Netherlands, 2) FEIBA vs. rFVIIa for the treatment of Acquired Hemophilia A patients and 3) ADAMTS13 and/or plasmic score test for TTP patients. 
+\end{itemize}
+
+
+%%% Teaching \& Lectures
+%%% ------------------------------------------------------------
+\NewPart{Teaching}{}
+
+\PresentationEntry{Biostatistics Methods Core}{2013}{Columbia University Mailman School of Public Health}{Teaching Assistant. October 2013 - December 2013}
+
+
+%%% Presentation & Talks
+%%% ------------------------------------------------------------
+\NewPart{Awards, Fellowship, \& Scholarship}{}
+
+\PresentationEntry{Summer Scholarship}{2019-May}{PhRMA}{}{}
+
+\PresentationEntry{Summer Internship}{2019-May}{Stratevi}{}{}
+
+\PresentationEntry{Summer Institutes Scholarship}{2018-July}{University of Washington Dept. of Biostatistics}{}{}
+
+\PresentationEntry{Summer Research Fellowship}{2018-May}{University of Groningen-AstraZeneca}{}{}
+
+\PresentationEntry{MPI Undergraduate Research Grant}{2009-May}{MSU College of Natural Sciences}{}{}
+
+\PresentationEntry{Korean Student Organization Scholarship}{2008-May}{MSU Korean Student Organization}{}{}
+
+\PresentationEntry{MSU Biochemistry Undergraduate Research Award}{2008-May}{MSU Department of Biochemistry \& Molecular Biology}{}{}
+
+\PresentationEntry{ISU Computational and Systems Biology Summer Fellowship}{2008-May}{Iowa State University}{}{}
+
+\PresentationEntry{MSU College of Natural Science Summer Fellowship}{2008-May}{MSU College of Natural Science}{}{}
+
+\PresentationEntry{Dallas Chapin J Endowed Scholarship}{2007-May}{MSU}{}{}
+
+%%% Presentation & Talks
+%%% ------------------------------------------------------------
+
+\NewPart{Presentations \& Talks}{}
+
+\PresentationEntry{Predictive ability and clinical usefulness of short-acting $\beta$-agonist use as a marker of future asthma exacerbations}{2019-May}{International Society for Pharmacoeconomics \& Outcomes Research 2019 International Meeting}{Conference Presentation}
+\sepspace
+
+\PresentationEntry{Cost-effectiveness analysis of asthma adherence and technique improving device in the Netherlands}{2018-Nov}{Asia Pacific Society for Respirology (APSR)}{Conference Presentation}
+\sepspace
+
+\PresentationEntry{Spatial analysis of the association between LLIN use and malaria prevalence in a longitudinal cohort in northeast Uganda}{2018-Nov}{American Society of Tropical Medicine and Hygiene (ASTMH) 67th Annual Meeting}{Conference Presentation}
+\sepspace
+
+\PresentationEntry{Introduction to Git \& Reproducible Research}{2018-Oct}{University of Colorado Department of Biostatistics \& Bioinformatics}{BIOS 6624 Class Lecture}
+\sepspace
+
+\PresentationEntry{Derivation, validation, and testing of novel predicion model to identify severe vs. non-severe childhood epilepsy patients}{2017-Oct}{Western PharmacoEconomic Conference}{Conference Presentation}
+\sepspace
+
+\PresentationEntry{Utilization of FEIBA vs. Recombinant Factor VIIa in the Treatment of Acquired Hemophilia A - A cost-effectiveness analysis}{2017-Jan}{Skaggs Winter Symposium}{Conference Presentation}
+\sepspace
+
+\PresentationEntry{Do Asthma or COPD Cost-Effectiveness Models Have Similar Structures and Inputs?}{2016-May}{American Thoracic Society}{Conference Presentation}
+\sepspace
+
+\PresentationEntry{Phenotypically matched vs. traditional screen method for preparing red blood cell units in patients with abnormal placentation: a decision analysis approach?}{2016-Dec}{Skaggs Winter Symposium}{Conference Presentation}
+\sepspace
+
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Languages}{English (fluent)}
+\SkillsEntry{}{Korean (fluent)}
+\SkillsEntry{}{Spanish (beginner)}
+\sepspace
+
+\SkillsEntry{Software}{\textsc{R}, \LaTeX, \textsc{Python}, \textsc{C++},\textsc{markdown}, \textsc{Visual Basic}, \textsc{SAS}, \textsc{SQL}, \textsc{Bash}, \textsc{TREEAGE}}
+\SkillsEntry{}{\href{https://github.com/ck2136}{Github}}
+\SkillsEntry{}{\href{https://pharmacoecon.me}{Home page}}
+\sepspace
+
+\SkillsEntry{Databases}{\textsc{IMS PharMetrics}, \textsc{OPTUM}}
+\sepspace
+
+\SkillsEntry{Statistics}{\textsc{Linear, Generalized Linear, Stochastic, Longitudinal, and Geo-spatial models}, }
+
+\sepspace
+
+%%% Organization \& Membership
+%%% ------------------------------------------------------------
+\NewPart{Organization Membership}{}
+
+\EducationEntry{Biostatistics Student Association: UC Denver Student Chapter}{2018-Present}{Member}{}
+\sepspace
+
+\EducationEntry{ISPOR UC Denver Student Chapter}{2013-present}{Member}{}
+\sepspace
+
+\EducationEntry{International Society for Pharmacoeconomics \& Outcomes Research UC Denver Student Chapter}{2017-2018}{Vice President}{}
+\sepspace
+
+\NewPart{Professional Services}{}
+
+\EducationEntry{American Journal of Respiratory and Critical Care Medicine
+                }{2018-Present}{Peer Reviewer}{}
+\EducationEntry{Journal of Medical Decision Making}{2018-Present}{Peer Reviewer}{}
+\EducationEntry{BMJ Open Respiratory Research}{2018-Present}{Peer Reviewer}{}
+\EducationEntry{ERJ Open Research}{2018-Present}{Peer Reviewer}{}
+
+\sepspace
+
+
+%%% References
+%%% ------------------------------------------------------------
+\NewPart{References}{}
+Available upon request
+\end{document}
